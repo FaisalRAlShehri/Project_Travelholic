@@ -1,0 +1,44 @@
+{
+  "name": "project_travelholic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node src/server/index.js",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server  --config webpack.dev.js --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "jest": "^26.3.0",
+    "mini-css-extract-plugin": "^0.9.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.11.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.2",
+    "css-loader": "^4.1.1",
+    "express": "^4.17.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "latest",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "@jest/globals": "latest",
+    "jsdom": "latest"
+  }
+}

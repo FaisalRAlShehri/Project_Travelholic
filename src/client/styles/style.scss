@@ -1,0 +1,384 @@
+// General Variables
+$bgColor: #192d38;
+$textColor: rgb(100, 206, 170);
+$fontFamily: 'Oswald', sans-serif;
+
+// General rules
+body {
+  background: #211f2f;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#app {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  background: $bgColor;
+  color: $textColor;
+  justify-content: center;
+  font-family: $fontFamily;
+}
+
+a {
+  color: $textColor;
+  text-decoration: underline;
+}
+
+label {
+  display: block;
+  font-size: 21px;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 280px;
+  background: #211f2f;
+  color: $textColor;
+  font-size: 16px;
+  font-family: $fontFamily;
+  border: none;
+}
+
+textarea {
+  background: #211f2f;
+  color: $textColor;
+  font-size: 14px;
+  font-family: $fontFamily;
+}
+
+button {
+  width: 290px;
+  height: 65px;
+  background: #211f2f;
+  color: $textColor;
+  font-size: 20px;
+  font-family: $fontFamily;
+  border: none;
+  box-shadow: 0.8vw 0.7vw 0.7vw $textColor;
+}
+
+.headline {
+  grid-area: hd;
+  text-align: center;
+  font-size: 5em;
+}
+
+.input {
+  display: grid;
+  grid-area: inp;
+}
+
+#city {
+  grid-area: ct;
+}
+
+#startdate {
+  grid-area: ad;
+}
+
+#enddate {
+  grid-area: ed;
+}
+
+#generate {
+  grid-area: gen;
+  margin-top: 3%;
+}
+
+.results {
+  display: grid;
+  grid-area: res;
+  justify-content: center;
+}
+
+#result {
+  grid-area: txt;
+}
+
+.footer {
+  grid-area: ft;
+  background: #211f2f;
+  display: grid;
+  text-align: center;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-template-areas: "rights rights rights" "xx contact yy" "xx accounts yy";
+  width: 100%;
+}
+
+#rights {
+  grid-area: rights;
+  text-align: center;
+}
+
+#contact {
+  grid-area: contact;
+}
+
+#accounts {
+  grid-area: accounts;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  text-align: left;
+  grid-template-areas: "lk gh";
+}
+
+#linkedin {
+  grid-area: lk;
+}
+
+#github {
+  grid-area: gh;
+}
+
+// Big screen media query (Large laptop, TV etc)
+@media screen and (min-width: 1100px) {
+  #app {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr;
+    grid-row-gap: 5%;
+    grid-template-areas: "hd hd hd" "xx inp yy" "xx res yy" "xx res yy" "ft ft ft";
+    height: 100vh;
+  }
+
+  img {
+    max-width: 720px;
+    max-height: 480px;
+  }
+
+  .input {
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #city {
+    grid-area: 0/0/1/2;
+  }
+
+  #startdate {
+    grid-area: 0/2/1/3;
+  }
+
+  #enddate {
+    grid-area: 0/3/1/-1;
+  }
+
+  #generate {
+    grid-area: 2/2/-1/3;
+  }
+
+  .results {
+    grid-template: 1fr 1fr/ 1fr;
+    grid-template-areas: "pic txt";
+  }
+
+  #image {
+    grid-area: pic;
+  }
+
+  #result {
+    font-size: 1.5em;
+  }
+
+  label {
+    font-size: 27px;
+  }
+
+  input {
+    height: 60px;
+    width: 320px;
+    font-size: 20px;
+  }
+
+  button {
+    width: 400px;
+    height: 100px;
+    font-size: 26px;
+  }
+
+  textarea {
+    font-size: 20px;
+  }
+}
+
+// Medium screen media query (Small laptop, big Tablet etc)
+@media screen and (max-width: 1099px) and (min-width: 640px) {
+  #app {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr repeat(4, 0.6fr) 2fr 1fr 0.4fr;
+    grid-row-gap: 5%;
+    grid-template-areas: "hd hd hd" "xx inp yy" "xx inp yy" "xx inp yy" "xx inp yy" "xx res yy" "xx res yy" "ft ft ft";
+    height: 135vh;
+  }
+
+  img {
+    max-width: 470px;
+    max-height: 330px;
+    width: 100%;
+  }
+
+  .input {
+    grid-template-areas: "ct" "ad" "ed" "gen";
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .results {
+    grid-template-areas: "pic" "txt";
+  }
+
+  #image {
+    margin-top: -3%;
+    grid-area: pic;
+  }
+
+  #result {
+    font-size: 1.2em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    height: 60px;
+    width: 320px;
+    font-size: 16px;
+  }
+
+  button {
+    width: 300px;
+    height: 75px;
+    font-size: 20px;
+  }
+}
+
+// Small screen media query (Small tablet, Mobile phone etc)
+@media screen and (max-width: 639px) and (min-height: 685px) {
+  #app {
+    grid-template-columns: 1px 1fr 1px;
+    grid-template-rows: 1fr repeat(4, 0.6fr) 2fr 1fr 0.4fr;
+    grid-row-gap: 3%;
+    grid-template-areas: "hd hd hd" "xx inp yy" "xx inp yy" "xx inp yy" "xx inp yy" "xx res yy" "xx res yy" "ft ft ft";
+    height: 145vh;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  img {
+    max-width: 360px;
+    max-height: 220px;
+    width: 80%;
+  }
+
+  .input {
+    grid-template-areas: "ct" "ad" "ed" "gen";
+  }
+
+  .results {
+    grid-template: 1fr 1fr / 1fr;
+    grid-template-areas: "pic" "txt";
+  }
+
+  #image {
+    margin-top: -3%;
+    grid-area: pic;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #result {
+    font-size: 1.2em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+  }
+}
+
+// X-Small screen media query (Small mobile phone etc)
+@media screen and (max-width: 639px) and (max-height: 684px) {
+  #app {
+    grid-template-columns: 1px 1fr 1px;
+    grid-template-rows: 1fr repeat(4, 0.8fr) 2fr 1fr 0.4fr;
+    grid-row-gap: 5%;
+    grid-template-areas: "hd hd hd" "xx inp yy" "xx inp yy" "xx inp yy" "xx inp yy" "xx res yy" "xx res yy" "ft ft ft";
+    height: 175vh;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  img {
+    max-width: 360px;
+    max-height: 220px;
+    width: 80%;
+  }
+
+  .input {
+    grid-template-areas: "ct" "ad" "ed" "gen";
+    margin-top: -30%;
+  }
+
+  .results {
+    grid-template: 1fr 1fr / 1fr;
+    grid-template-areas: "pic" "txt";
+  }
+
+  #image {
+    margin-top: -3%;
+    grid-area: pic;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #result {
+    font-size: 1.2em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+  }
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */
+  //color: #f0d43a;
+  color: $textColor;
+  font-family: $fontFamily;
+
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  //color: #f0d43a;
+  color: $textColor;
+  font-family: $fontFamily;
+
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  //color: #f0d43a;
+  color: $textColor;
+  font-family: $fontFamily;
+
+}
