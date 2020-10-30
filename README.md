@@ -1,21 +1,21 @@
-#Project TRAVELHOLIC - A Udacity Capstone project
+# Project TRAVELHOLIC - A Udacity Capstone project
 Created by Faisal R. Al-Shehri.
-##Description
+## Description
 This project is a travel app that displays basic information that a traveller might find important
 about any destination he/she enters.
 
-##APIs Used
+## APIs Used
 This project uses 3 different API.
 - Geonames.
 - Weatherbit.
 - Pixabay.
  
-##Extended options
+## Extended options
 
 The extended option used was:-
 - "Add end date and display length of trip."
  
-##How to start this project
+## How to start this project
 To install packages:
 - npm install
 
