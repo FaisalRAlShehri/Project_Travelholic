@@ -2,7 +2,7 @@
 Created by Faisal R. Al-Shehri.
 ## Description
 This project is a travel app that displays basic information that a traveller might find important
-about any destination he/she enters.
+about any destination he/she types in.
 
 ## APIs Used
 This project uses 3 different API.
